@@ -1,0 +1,4 @@
+.git/**
+coverage/**
+data/strings-*.js
+node_modules/**
