@@ -4,7 +4,7 @@ process.env.NODE_ENV = 'production';
 
 const http = require('http');
 const Koa = require('koa');
-const shutdown = require('./koa-graceful-shutdown');
+const shutdown = require('koa-graceful-shutdown');
 
 // Next, start your HTTP server
 (() => {

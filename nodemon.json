@@ -1,0 +1,14 @@
+{
+  "env": {
+    "DEBUG": "koa:*",
+    "NODE_ENV": "development"
+  },
+  "exclude": [
+    "coverage",
+    "node_modules"
+  ],
+  "execMap": {
+    "js": "node -r module-alias/register"
+  },
+  "ext": "js json"
+}

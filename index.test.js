@@ -1,9 +1,9 @@
-/* eslint-env node, mocha */
+require('module-alias/register');
 const assert = require('assert');
 const crypto = require('crypto');
 const rewire = require('rewire');
 
-const koaGracefulShutdown = rewire('./koa-graceful-shutdown');
+const koaGracefulShutdown = rewire('koa-graceful-shutdown');
 const NOOP = () => {}; // eslint-disable-line no-empty-function
 
 describe('koa-graceful-shutdown', () => {
@@ -13,7 +13,7 @@ describe('koa-graceful-shutdown', () => {
   it('should return a middleware function', () => {
     const middleware = koaGracefulShutdown({});
     assert.equal(typeof middleware, 'function');
-    assert.equal(middleware.name, 'shutdownMiddleware');
+    assert.equal(middleware.name, 'shutdown');
   });
 
   it('should always return the next() Promise when not shutting down', () => {
@@ -58,7 +58,7 @@ describe('koa-graceful-shutdown', () => {
 
       assert.strictEqual(ctx.status, 503);
       assert.deepStrictEqual(ctx.headers, { 'Connection': 'close' });
-      assert.strictEqual(ctx.body, 'Server is in the process of restarting');
+      assert.strictEqual(ctx.body, 'Server is in the process of shutting down');
     });
 
     assert.deepStrictEqual(events, [ 'process.exit' ]);
@@ -107,7 +107,7 @@ describe('koa-graceful-shutdown', () => {
 
       assert.strictEqual(ctx.status, 503);
       assert.deepStrictEqual(ctx.headers, { 'Connection': 'close' });
-      assert.strictEqual(ctx.body, 'Server is in the process of restarting');
+      assert.strictEqual(ctx.body, 'Server is in the process of shutting down');
     });
 
     assert.deepStrictEqual(events, [ 'server.close', 'process.exit' ]);
@@ -158,7 +158,7 @@ describe('koa-graceful-shutdown', () => {
 
       assert.strictEqual(ctx.status, 503);
       assert.deepStrictEqual(ctx.headers, { 'Connection': 'close' });
-      assert.strictEqual(ctx.body, 'Server is in the process of restarting');
+      assert.strictEqual(ctx.body, 'Server is in the process of shutting down');
     });
 
     assert.deepStrictEqual(events, [ 'server.close', 'process.exit' ]);
@@ -205,7 +205,7 @@ describe('koa-graceful-shutdown', () => {
 
       assert.strictEqual(ctx.status, 503);
       assert.deepStrictEqual(ctx.headers, { 'Connection': 'close' });
-      assert.strictEqual(ctx.body, 'Server is in the process of restarting');
+      assert.strictEqual(ctx.body, 'Server is in the process of shutting down');
     });
 
     assert.deepStrictEqual(events, [ 'setTimeout', 'process.exit', 'server.close', 'process.exit' ]);

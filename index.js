@@ -36,11 +36,11 @@ module.exports = function createShutdownMiddleware(server, opts = {}) {
     });
   });
 
-  return function shutdownMiddleware(ctx, next) {
+  return function shutdown(ctx, next) {
     if (shuttingDown) {
       ctx.status = 503;
       ctx.set('Connection', 'close');
-      ctx.body = 'Server is in the process of restarting';
+      ctx.body = 'Server is in the process of shutting down';
     } else {
       return next();
     }

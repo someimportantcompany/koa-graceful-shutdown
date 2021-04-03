@@ -6,6 +6,8 @@ parser: babel-eslint
 parserOptions:
   sourceType: module
   ecmaVersion: 8
+plugins:
+  - sort-requires
 rules:
   accessor-pairs: error
   array-callback-return: error
@@ -46,7 +48,7 @@ rules:
   curly:
     - error
     - all
-  default-case: error
+  default-case: off
   dot-location:
     - error
     - property
@@ -149,7 +151,6 @@ rules:
   no-param-reassign: off
   no-path-concat: error
   no-plusplus: error
-  no-process-env: off
   no-process-exit: off
   no-proto: error
   no-prototype-builtins: off
@@ -200,7 +201,10 @@ rules:
   object-property-newline:
     - error
     - allowMultiplePropertiesPerLine: true
-  object-shorthand: off
+  object-shorthand:
+    - error
+    - always
+    - avoidExplicitReturnArrows: true
   one-var: off
   one-var-declaration-per-line: error
   operator-assignment: error
@@ -228,6 +232,7 @@ rules:
   sort-imports: error
   sort-keys: off
   sort-vars: error
+  sort-requires/sort-requires: error
   space-before-blocks: error
   space-before-function-paren: off
   space-in-parens:
@@ -257,3 +262,16 @@ rules:
   yoda:
     - error
     - never
+overrides:
+  # Set a specific environment for test files!
+  - files:
+      - '*.test.js'
+    env:
+      mocha: true
+    plugins:
+      - mocha
+    rules:
+      global-require: off
+      func-names: off
+      no-console: off
+      no-invalid-this: off
