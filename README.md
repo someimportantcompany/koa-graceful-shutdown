@@ -49,4 +49,4 @@ shutdown(server, opts) => function(ctx, next)
 ## Notes
 
 - Original credits to [Paul Serby](https://github.com/serby/) for [`express-graceful-shutdown`](https://github.com/serby/express-graceful-shutdown).
-- Any questions or suggestions please [open an issue](https://github.com/jdrydn/koa-graceful-shutdown/issues).
+- Any questions or suggestions please [open an issue](https://github.com/someimportantcompany/koa-graceful-shutdown/issues).
