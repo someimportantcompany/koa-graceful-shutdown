@@ -1,7 +1,8 @@
 # koa-graceful-shutdown
 
-[![NPM](https://badge.fury.io/js/koa-graceful-shutdown.svg)](https://www.npmjs.com/package/koa-graceful-shutdown)
-[![CircleCI](https://circleci.com/gh/someimportantcompany/koa-graceful-shutdown/tree/master.svg?style=shield)](https://circleci.com/gh/someimportantcompany/koa-graceful-shutdown/tree/master)
+[![NPM](https://badge.fury.io/js/koa-graceful-shutdown.svg)](https://npm.im/koa-graceful-shutdown)
+[![CI](https://github.com/someimportantcompany/koa-graceful-shutdown/actions/workflows/ci.yml/badge.svg)](https://github.com/someimportantcompany/koa-graceful-shutdown/actions/workflows/ci.yml)
+<!-- [![Coverage](https://coveralls.io/repos/github/someimportantcompany/koa-graceful-shutdown/badge.svg?branch=master)](https://coveralls.io/github/someimportantcompany/koa-graceful-shutdown?branch=master) -->
 
 Ensure that during shutdown [Koa](https://github.com/koajs/koa) returns correctly with a `HTTP 503 Service Unavailable`. Based off [`express-graceful-shutdown`](https://github.com/serby/express-graceful-shutdown) with the middleware adapted for Koa.
 
