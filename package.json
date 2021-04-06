@@ -9,9 +9,9 @@
     "preversion": "npm test",
     "postversion": "git push && git push --tags"
   },
-  "main": "koa-graceful-shutdown.js",
+  "main": "index.js",
   "files": [
-    "koa-graceful-shutdown.js"
+    "index.js"
   ],
   "author": "James D <james@jdrydn.com> (https://jdrydn.com)",
   "repository": {
