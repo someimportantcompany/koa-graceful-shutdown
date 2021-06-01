@@ -1,12 +1,11 @@
-require('module-alias/register');
 const assert = require('assert');
 const crypto = require('crypto');
 const rewire = require('rewire');
 
-const koaGracefulShutdown = rewire('koa-graceful-shutdown');
-const NOOP = () => {}; // eslint-disable-line no-empty-function
-
 describe('koa-graceful-shutdown', () => {
+  const koaGracefulShutdown = rewire('koa-graceful-shutdown');
+  const NOOP = () => {}; // eslint-disable-line no-empty-function
+
   // A fake logger to silence output
   const logger = { info: NOOP, warn: NOOP, error: NOOP };
 

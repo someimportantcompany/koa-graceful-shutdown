@@ -5,13 +5,13 @@
   "scripts": {
     "dev": "nodemon example.js",
     "lint": "eslint .",
-    "test": "nyc --reporter=lcov --reporter=text --exclude *.test.js mocha --exit *.test.js",
+    "test": "nyc --reporter=lcov --reporter=text --exclude *.test.js mocha ./*.test.js",
     "preversion": "npm test",
     "postversion": "git push && git push --tags"
   },
-  "main": "index.js",
+  "main": "graceful-shutdown.js",
   "files": [
-    "index.js"
+    "graceful-shutdown.js"
   ],
   "author": "James D <james@jdrydn.com> (https://jdrydn.com)",
   "repository": {

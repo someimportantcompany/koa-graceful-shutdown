@@ -1,0 +1,6 @@
+{
+  "exit": true,
+  "require": [
+    "module-alias/register"
+  ]
+}

@@ -6,7 +6,7 @@
  */
 module.exports = function createShutdownMiddleware(server, opts = {}) {
   const logger = opts.logger || console; // Defaults to console
-  const forceTimeout = opts.forceTimeout || (30 * 1000); // Defaults to 30s
+  const forceTimeout = typeof opts.forceTimeout === 'number' ? opts.forceTimeout : (30 * 1000); // Defaults to 30s
 
   let shuttingDown = false;
 
